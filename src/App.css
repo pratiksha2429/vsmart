@@ -1,0 +1,504 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+* body{
+  background-color: #eee;
+}
+/* compairelist */
+.compaire{
+  height: 250px;
+  width: 100%;
+  background-image: url(https://media.istockphoto.com/id/612011684/photo/frame-of-fresh-vegetables-on-wooden-background-with-copy-space.jpg?s=2048x2048&w=is&k=20&c=nJnYvEV93Lg7pwTkBqyO_nJIdUf8-s8j9sQSZCBL31M=);
+background-repeat: no-repeat;
+background-size: cover;
+opacity: 0.8;
+}
+
+/*shop start*/
+.shop{
+  height: 400px;
+  width: 100%;
+  background-image: url(https://media.istockphoto.com/id/612011684/photo/frame-of-fresh-vegetables-on-wooden-background-with-copy-space.jpg?s=2048x2048&w=is&k=20&c=nJnYvEV93Lg7pwTkBqyO_nJIdUf8-s8j9sQSZCBL31M=);
+background-repeat: no-repeat;
+background-size: cover;
+opacity:0.8;
+}
+.shop h1{
+
+  text-align: center;
+justify-content: center;
+}
+/*shop end*/
+/*login*/
+
+/*subcategory start*/
+
+.ice h1{
+
+  text-align: center;
+justify-content: center;
+}
+/*icecream end*/
+
+
+/*about start*/
+.about-ship{
+  height: 250px;
+  width: 100%;
+  border:1px solid black;
+  margin-bottom: 10px;
+}
+.about-square{
+  height: 250px;
+  width: 250px;
+  border: 1px solid #000000; 
+}
+.about-round{
+  height: 70px;
+  width: 70px;
+  border: 1px solid #000000;
+  border-radius: 50px;
+margin-top: 50px;
+margin-left: 20px;
+text-align: center;
+justify-content: center;
+padding-top: 20px;
+color: green;
+}
+    
+.about-round i{
+  font-size: 30px;
+}
+/*about end*/
+ /**offcanvas toggle btn in bootstrap */
+ 
+  /**offcanvas toggle btn in bootstrap end*/
+
+/*dropdown.... category*/
+
+.dropdown-menu ul{
+  list-style: none;
+  padding: 0;
+  height:100%;
+  width: 100%;
+  margin-bottom: 10px;
+ 
+}
+/* wallet */
+div .wallet{
+  height: 300px;
+  width: 100%;
+   background: linear-gradient(to right,  #44a977, #9191d3);
+   text-align: center;
+}
+
+
+.dropdown-menu li a{
+  color: black;
+
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+.dropdown-menu li a:hover{
+  background-color: #eee;
+  width: 100%;
+}
+.dropdown-menu li:first-child a{
+  font-weight: bold;
+  font-size: 20px;
+  color: #0004de;
+  text-align: center;
+}
+
+/* //dropdown.... category//  */
+.App-header {
+  background-color: green;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*header2
+  .srch{
+    height:54px;
+    width: 450px;
+    border: 1px solid black;
+    margin-top: 20px;
+    background-color:#eee ;
+  }*/
+.ddiv1 {
+  margin-left: 0px;
+}
+
+div .ddiv {
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 60px;
+  margin-left: 10px;
+  margin-top: 45px;
+  background-color: #eee;
+
+}
+
+div .ddiv:hover {
+ 
+  background-color: green;
+  text-decoration: none;
+ 
+}
+div .ddiv :link:hover{
+  color: white;
+}
+
+div .ddiv i {
+  text-align: center;
+  font-size: 20px;
+  margin-left: 2px;
+  padding-top: 15px;
+}
+
+div .ddiv span {
+  padding-left: 10px;
+  padding-top: 5px;
+  font-size: 15px;
+}
+
+div .ddiv5 img {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  margin-top: 35px;
+}
+
+/* Add hover effect to the dropdown menu */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  background-color: #f8f9fa;
+  /* Change the background color on hover */
+}
+
+div .featureCard {
+  background-color: blueviolet;
+  color: white;
+  border-radius: 5px;
+}
+
+div .offer {
+  background-color: blue;
+  width: 65px;
+  color: white;
+  border-radius: 5px;
+}
+
+i .heart {
+  font-weight: 25px;
+  margin-left: 80px;
+}
+
+i .heart:hover {
+  color: blue;
+}
+
+/* category card*/
+/* Define the default and hover styles for the heart icon */
+.heart-img {
+  color: wheat;
+  /* Set the default color */
+  transition: color 0.3s;
+  /* Add a transition effect for a smooth color change */
+}
+
+.heart-img:hover {
+  color: blue;
+  /* Set the color when hovered */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.team-area {
+  display: flex;
+  width: 90%;
+
+}
+
+/* CSS for the image overlay hover effect */
+.single-team {
+  position: relative;
+}
+
+/* This container wraps the image and overlay content */
+.single-team .img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Style for the overlay content */
+.single-team .img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  /* Background color with transparency */
+  color: white;
+  /* Text color */
+  opacity: 0;
+  /* Initially transparent */
+  transition: opacity 0.3s;
+  /* Smooth transition */
+}
+
+/* Make the overlay content visible on hover */
+.single-team:hover .img-overlay {
+  opacity: 1;
+  color: red;
+}
+
+/* Set a fixed height for the card images */
+.img-container img {
+  height: 200px;
+  /* Adjust the height to your preference */
+  object-fit: cover;
+  /* To maintain aspect ratio and cover the container */
+  width: 300px;
+  flex: 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Use Flexbox to ensure equal height for card images */
+.single-team .img-container {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.card:hover {
+  border: 2px solid green;
+}
+
+
+
+
+
+
+
+/* //category card */
+/*slick slider*/
+.Myimg {
+  position: relative;
+  border-radius: 30px;
+
+}
+
+.Myimg img {
+  display: block;
+  margin: auto;
+  border-radius: 30px;
+
+}
+
+.cont {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.6s;
+  border-radius: 30px;
+
+}
+
+.cont:hover {
+  opacity: 1;
+}
+
+.cont h4 {
+  font-size: 35px;
+  color: white;
+}
+
+/* // slick slider*/
+/*bttn show more*/
+.catb {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Green */
+.success {
+  border-color: #04AA6D;
+  color: green;
+}
+
+.success:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* //bttn show more*/
+/* item collected */
+.custom-image {
+  max-width: auto;
+  /* Ensures the image is responsive */
+  height: 100%;
+  /* Maintains the aspect ratio */
+}
+
+.caImg {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+}
+
+.card-bord {
+  height: 480px;
+  width: 250px;
+}
+
+/* //item collected */
+/* shop by brand */
+.spinner-box {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+.spinner-box::before {
+  content: '';
+  position: absolute;
+  inset: -10px 140px;
+  background: linear-gradient(315deg, #e85adf, #0004de);
+  transition: 0.5s;
+  animation: animate 4s linear infinite;
+}
+
+.spinner-box:hover::before {
+  inset: -20px 0px;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  0% {
+    transform: rotate(360deg);
+  }
+}
+.spinner-box::after{
+  content: '';
+  position: absolute;
+  inset: 6px;
+  background: rgb(41, 156, 41);
+  border-radius: 50%;
+  z-index: 1;
+}
+.spinner-content{
+  position:absolute;
+  inset: 30px;
+  border: 3px dotted #070a1c;
+  z-index: 3;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.spinner-content img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 3;
+}
+.spinner-box:hover .spinner-content img{
+ opacity: 0; 
+} 
+.spinner-content a i {
+  position: relative;
+  font-size: 50px;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+}
+/* //shop by brand*/
+/*footer */
+.row-foot div {
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+  margin-left: 20px;
+  padding-left: 2px;
+  padding-top: 6px;
+}
+
+.row-foot div:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+/* ///footer */
