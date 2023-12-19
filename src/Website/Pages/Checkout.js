@@ -112,7 +112,7 @@ const Checkout = () => {
             </div>
           </div>
           <div className="container">
-          <hr  className='text-success text-center' style={{width:"200px"}}/>
+          <hr  className='text-success text-center'/>
             <table class="table table-condensed text-center  shadow">
                 
               <thead>
