@@ -142,8 +142,8 @@ const Checkout = () => {
               </table>
             </div>
             <div className="container my-5 mx-5 shadow">
-<h2>Delivery Address:</h2>
-<hr  className='text-bold'/>
+              <h2>Delivery Address:</h2>
+              <hr className='text-bold' />
             </div>
 
           </div>
