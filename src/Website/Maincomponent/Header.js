@@ -369,7 +369,7 @@ const Header = (props) => {
                         </button>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="#">My Account</a>
-                          <a class="dropdown-item" href="#">My order</a>
+                          <Link class="dropdown-item" to='/orderlist'>My order</Link>
                           <a class="dropdown-item" onClick={logout} href="#">Logout</a>
                         </div>
                       </li>

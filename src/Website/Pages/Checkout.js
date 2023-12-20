@@ -194,7 +194,7 @@ const Checkout = () => {
         <label htmlFor=""> By making this purchase you agree to our <a href="">Terms and Conditions</a> </label>
       </div>
       <div class="d-grid my-5">
-  <button type="button" class="btn btn-secondary btn-block py-3 h4"> <Link to="/orderlist">CONFIRM ORDER</Link> </button>
+  <button type="button" class="btn btn-secondary btn-block py-3 h4">CONFIRM ORDER</button>
 </div>
     </>
   )
