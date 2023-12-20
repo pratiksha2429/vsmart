@@ -63,7 +63,7 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="container-fluid my-5" style={{ backgroundColor: "#eee" }}>
+      <div className="container-fluid my-5 py-5" style={{ backgroundColor: "#eee" }}>
         <div className=" shop text-white pt-5">
 
           <h1 className='mt-5' style={{ paddingTop: "60px" }}>CHECKOUT</h1>
@@ -141,14 +141,61 @@ const Checkout = () => {
 
               </table>
             </div>
-            <div className="container my-5 mx-5 shadow">
+            <div className="container my-3 shadow" style={{ backgroundColor: "#eee" }}>
               <h2>Delivery Address:</h2>
-              <hr className='text-bold' />
+              <hr className='text-bold text-success' />
+              <div className="row">
+                <div className="col-lg-6 col-md-6 col-sm-12 my-1">
+                  <div className="container text-white py-1" style={{ backgroundColor: "gray", borderRadius: '20px' }}>
+                    <h4 className='text-center'>Home:</h4>
+                    <p className='text-center'>shirasane, baramati, pune</p>
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-6 col-sm-12 my-1">
+                  <div className="container text-white py-1" style={{ backgroundColor: "gray", borderRadius: '20px' }}>
+                    <h4 className='text-center'>Contact Number:</h4>
+                    <p className='text-center'>+91 7768846617</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
         </div>
       </div>
+      <div className="container-fluid my-3 shadow" style={{ backgroundColor: "#eee" }}>
+        <h2>Payment Option :</h2>
+        <hr className='text-bold text-success' />
+        <div className="row">
+          <div className="col-lg-6 col-md-6 col-sm-12 my-1">
+            <div className="container text-white text-center py-1" style={{ backgroundColor: "green", borderRadius: '20px' }}>
+
+              <input type="radio" name="payment" id="cash" />
+              <label htmlFor="cash">Cash on Delivery</label>
+
+
+              <h3>&#8377;1565</h3>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-6 col-sm-12 my-1">
+            <div className="container text-white text-center py-1" style={{ backgroundColor: "green", borderRadius: '20px' }}>
+
+              <input type="radio" name="payment" id="online" />
+              <label htmlFor="online"> Online Transfer</label>
+
+
+              <h3>&#8377; 1563</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container shadow my-5" style={{background:"white"}}>
+        <input type="checkbox" name="" id="" />
+        <label htmlFor=""> By making this purchase you agree to our <a href="">Terms and Conditions</a> </label>
+      </div>
+      <div class="d-grid my-5">
+  <button type="button" class="btn btn-secondary btn-block py-3 h4"> <Link to="/orderlist">CONFIRM ORDER</Link> </button>
+</div>
     </>
   )
 }
