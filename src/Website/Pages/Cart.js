@@ -28,13 +28,13 @@ const Cart = () => {
   useEffect(() => {
     //caluclate total in cart
     const newtotal = Cart.reduce(
-      (accumulator, item) => accumulator + item.online_price * item.cart_product_qty,
+      (accumulator, item) => accumulator + item.sale_price * item.cart_product_qty,
       0
     );
     setSubtotal(newtotal);
     // calculate gst in cart
     const gst = Cart.reduce(
-      (accumulator, item) => accumulator + (item.online_price * item.cart_product_qty * item.tax_per) / (100 + item.tax_per),
+      (accumulator, item) => accumulator + (item.sale_price * item.cart_product_qty * item.tax_per) / (100 + item.tax_per),
       0
     );
     setGst(gst);
