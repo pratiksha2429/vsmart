@@ -250,7 +250,7 @@ const Index = () => {
             <div class="col-12 ">
               <a href="#" class="btn btn-success btn-lg catb border-success my-3" role='button'>
                 <i class="fa-solid fa-eye"></i>
-                <span class="ms-2">Show more</span>
+                <span class="ms-2"> <Link to='/shop' style={{textDecoration:"none"}}>Show more</Link></span>
               </a>
             </div>
           </div>
@@ -312,7 +312,7 @@ const Index = () => {
               <div class="col-12 ">
                 <a href="#" class="btn btn-success btn-lg catb border-success my-3" role='button'>
                   <i class="fa-solid fa-eye"></i>
-                  <span class="ms-2">Show more</span>
+                  <span class="ms-2"><Link to='/shop' style={{textDecoration:"none"}}>Show more</Link></span>
                 </a>
               </div>
             </div>

@@ -19,6 +19,7 @@ import Cart from './Website/Pages/Cart';
 import Search from './Website/Pages/Search/Search';
 import Checkout from './Website/Pages/Checkout';
 import Orderlist from './Website/Pages/Orderlist';
+import Terms from './Website/Pages/Terms';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path='/search' element={<Master Comp={Search}></Master>}>   </Route>
           <Route path='/checkout' element={<Master Comp={Checkout}></Master>}>   </Route>
           <Route path='/orderlist' element={<Master Comp={Orderlist}></Master>}>   </Route>
+          <Route path='/terms' element={<Master Comp={Terms}></Master>}>   </Route>
           <Route path='/product-shop/:cat_id/:sub_id' element={<Master Comp={Subcategory}></Master>}>   </Route>
         </Routes>
       </BrowserRouter>

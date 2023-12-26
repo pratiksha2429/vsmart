@@ -11,15 +11,65 @@ const Checkout = () => {
   const [gst, setGst] = useState(0);
   const [pv, setPv] = useState(0);
   const [disc, setDisc] = useState(0);
+  const [Order, setorder] = useState({
+    product_id: [],
+    product_qty: [], // An array of product quantities
+    sale_price: [], // An array of product prices
+    discount: [], // An array of discounts
+    pv_value: [], // An array of point values
+    prototal: [], // An array of subtotals
+    gst: [], // An array of GST value
+
+    order_address: user.address, // address of order
+    order_mob_no: user.mob_no,
+    paymentmode: '', //paymentmode(adjust as needed)
+    totalgst: '', // total gst
+  })
+
 
   const getCartItem = () => {
     http.get(`/get-cart-list`)
       .then((res) => {
-        setCart(res.data.cart);
-        console.log(res.data.cart);
-      }).catch((e) => {
-        console.log(e);
-      });
+        const cartdata = res.data.cart;
+        console.log("car", cartdata);
+        const productIds = [];
+        const productQtys = [];
+        const productPrices = [];
+        const productDiscounts = [];
+        const productPvValues = [];
+        const productTotals = [];
+        const productGsts = [];
+
+
+
+        cartdata.forEach((item) => {
+          productIds.push(item.product_id);
+          productQtys.push(item.cart_product_qty);
+          productPrices.push(item.sale_price);
+          productDiscounts.push(item.discount);
+          productPvValues.push(item.point_value);
+          productTotals.push(item.cart_price);
+          productGsts.push(item.tax_per);
+        })
+
+        setorder((prevOrder) => ({
+          ...prevOrder,
+          product_id: productIds,
+          product_qty: productQtys,
+          sale_price: productPrices,
+          discount: productDiscounts,
+          pv_value: productPvValues,
+          prototal: productTotals,
+          gst: productGsts,
+
+        }))
+        setCart(cartdata);
+
+
+        // setCart(res.data.cart);
+        // console.log(res.data.cart);
+
+      })
   }
 
   useEffect(() => {
@@ -28,13 +78,13 @@ const Checkout = () => {
   useEffect(() => {
     //caluclate total in cart
     const newtotal = Cart.reduce(
-      (accumulator, item) => accumulator + item.online_price * item.cart_product_qty,
+      (accumulator, item) => accumulator + item.sale_price * item.cart_product_qty,
       0
     );
     setSubtotal(newtotal);
     // calculate gst in cart
     const gst = Cart.reduce(
-      (accumulator, item) => accumulator + (item.online_price * item.cart_product_qty * item.tax_per) / (100 + item.tax_per),
+      (accumulator, item) => accumulator + (item.sale_price * item.cart_product_qty * item.tax_per) / (100 + item.tax_per),
       0
     );
     setGst(gst);
@@ -54,11 +104,38 @@ const Checkout = () => {
       0
     );
     setDisc(disc);
-    console.log(disc);
+    // console.log(disc);
+    setorder((prevOrder) => ({
+      ...prevOrder,
+      total: newtotal,
+      totalgst: gst,
+      total_discount: disc,
+      totalpv: pv,
+    }));
 
   }, [Cart]);
 
+  const Onchangeinput = (e) => {
+    console.log(e);
+    setorder((prevOrder) => ({
+      ...prevOrder,
+      [e.target.name]: e.target.value
+    }));
+  }
 
+  const orderPlace = (e) => {
+    console.log(Order);
+
+    e.preventDefault();
+    // console.log(Order.product_id);
+    http.post(`/order_now`, Order)
+      .then((res) => {
+        console.log(res.data);
+        console.log(res.data.msg);
+      }).catch(function (er) {
+        console.log(er);
+      });
+  };
 
 
   return (
@@ -148,13 +225,13 @@ const Checkout = () => {
                 <div className="col-lg-6 col-md-6 col-sm-12 my-1">
                   <div className="container text-white py-1" style={{ backgroundColor: "gray", borderRadius: '20px' }}>
                     <h4 className='text-center'>Home:</h4>
-                    <p className='text-center'>shirasane, baramati, pune</p>
+                    <p className='text-center'>{user.address}</p>
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 my-1">
                   <div className="container text-white py-1" style={{ backgroundColor: "gray", borderRadius: '20px' }}>
                     <h4 className='text-center'>Contact Number:</h4>
-                    <p className='text-center'>+91 7768846617</p>
+                    <p className='text-center'>{user.mob_no}</p>
                   </div>
                 </div>
               </div>
@@ -170,11 +247,11 @@ const Checkout = () => {
           <div className="col-lg-6 col-md-6 col-sm-12 my-1">
             <div className="container text-white text-center py-1" style={{ backgroundColor: "green", borderRadius: '20px' }}>
 
-              <input type="radio" name="payment" id="cash" />
+              <input type="radio" name="payment" id="cash" onClick={(e) => Onchangeinput(e)} value={' Cash on Delivery'} />
               <label htmlFor="cash">Cash on Delivery</label>
 
 
-              <h3>&#8377;1565</h3>
+              <h3>&#8377; {subtotal.toFixed(2)}</h3>
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 my-1">
@@ -184,18 +261,22 @@ const Checkout = () => {
               <label htmlFor="online"> Online Transfer</label>
 
 
-              <h3>&#8377; 1563</h3>
+              <h3>&#8377; {subtotal.toFixed(2)}</h3>
             </div>
           </div>
         </div>
       </div>
-      <div className="container shadow my-5" style={{background:"white"}}>
-        <input type="checkbox" name="" id="" />
-        <label htmlFor=""> By making this purchase you agree to our <a href="">Terms and Conditions</a> </label>
+      <div className="container shadow my-5" style={{ background: "white" }}>
+        <input type="checkbox" id="termsCheckbox" />
+        <label htmlFor="termsCheckbox">
+          By making this purchase you agree to our{" "}
+          <Link to='/terms'>Terms and Conditions</Link>
+        </label>
       </div>
+
       <div class="d-grid my-5">
-  <button type="button" class="btn btn-secondary btn-block py-3 h4">CONFIRM ORDER</button>
-</div>
+        <button type="button" class="btn btn-secondary btn-block py-3 h4" onClick={(e) => orderPlace(e)} > CONFIRM ORDER</button>
+      </div>
     </>
   )
 }
