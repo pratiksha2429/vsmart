@@ -43,7 +43,7 @@
 }
 
 #progressbar-2 #step4:before {
-    content: '\f111';
+    content: '\f058';
     font-family: "Font Awesome 5 Free";
     color: #fff;
     width: 37px;
@@ -51,7 +51,7 @@
     text-align: center;
 }
 #progressbar-2 #step5:before {
-    content: '\f111';
+    content: '\f058';
     font-family: "Font Awesome 5 Free";
     color: #fff;
     width: 37px;
@@ -60,7 +60,7 @@
 }
 
 #progressbar-2 #step6:before {
-    content: '\f111';
+    content: '\f058';
     font-family: "Font Awesome 5 Free";
     color: #fff;
     width: 37px;

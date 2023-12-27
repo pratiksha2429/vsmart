@@ -6,6 +6,16 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
 import Cart from '../Pages/Cart';
 const Header = (props) => {
+  const removewishlist = (wish_id) => {
+    // console.log(wish_id);
+    http.get(`/remove-from-wishlist/${wish_id}`).then((res) => {
+      // console.log(res.data);
+      setWish(wish_id);
+      console.log(setWishlist((prevWishlist) => prevWishlist.filter(item => item.wish_id !== wish_id)));
+    }).catch((e) => { console.log(e); });
+
+  }
+
   //offcanvas start
 
   // offcanvas end
@@ -19,7 +29,7 @@ const Header = (props) => {
   const [Wishlist, setWishlist] = useState([]);
   console.log(Wishlist);
   const [wish, setWish] = useState([]);
-   
+
   const [searchQuery, setSearchQuery] = useState('');
   const [searchParams, setSearchParams] = useState();
 
@@ -52,33 +62,9 @@ const Header = (props) => {
         console.log(e);
       });
   }
-  //add to wishlist
-  // const addTowish = (product_id) => {
-  //   console.log(product_id);
-  //   http.get(`/add-to-wishlist/${product_id}`)
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       alert(res.data.msg);
-  //     }).catch((e) => {
-  //       console.log(e);
-  //     });
+ 
 
-  // }
-  //add to wishlist end
-
-  const getcatagory = () => {
-    http.get("/categories")
-      .then((res) => {
-        setcatg(res.data.categories);
-        res.data.categories.forEach((categories) => {
-          getsubcata(categories.category_id);
-        });
-      }).catch((e) => {
-        console.log(e);
-      });
-
-  }
-
+ 
 
 
 
@@ -128,9 +114,9 @@ const Header = (props) => {
   useEffect(() => {
     getCartItem();
   }, [token]);
-  useEffect(() =>{
+  useEffect(() => {
     getwItem();
-},[token, wish])
+  }, [token, wish])
 
   return (
     <>
@@ -191,7 +177,7 @@ const Header = (props) => {
                     <abbr title="Compare List"><i className="fa-solid fa-shuffle mx-1"></i> </abbr>
                   </button>
                     <span className="position-absolute  end-0 top-0 translate-middle badge rounded-pill bg-success">
-                      0 
+                      0
                     </span></Link>) : (
                   <Link to='/login' className="position-relative"> <button className="btn">
                     <abbr title="Compare List"><i className="fa-solid fa-shuffle mx-1"></i> </abbr>
@@ -273,7 +259,7 @@ const Header = (props) => {
 
                                       <img src={'https://vsmart.ajspire.com/uploads/product_image/' + item.product_image} alt="product" className="img-fluid" style={{ height: "150px", width: "120px" }} />
                                       <div className="img-overlay">
-                                        <i class="fa-solid fa-trash-can fa-beat"></i>
+                                        <i className="fa-solid fa-trash-can fa-beat"  onClick={() => removewishlist(item.product_id)}></i>
                                       </div>
                                     </div>
                                   </div>
